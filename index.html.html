@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>賃貸併用住宅 | IEGAO（イエガオ）いい家×いい笑顔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange:    #F26A00;
+  --orange2:   #FF8C2A;
+  --orange-lt: #FFF4EB;
+  --orange-md: #FFE0C2;
+  --ink:       #1A1A1A;
+  --ink2:      #333333;
+  --muted:     #6B6B6B;
+  --gray-lt:   #F5F5F5;
+  --gray-bd:   #E0E0E0;
+  --white:     #FFFFFF;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--ink); background: var(--white);
+  line-height: 1.75; -webkit-font-smoothing: antialiased;
+}
+
+/* ── PICTO ── */
+.picto {
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.picto svg { display: block; }
+
+/* ══ HEADER ══ */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 70px;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-bd);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+}
+.logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.logo-tagline {
+  font-size: 10px; color: var(--muted);
+  letter-spacing: 0.05em; line-height: 1.4;
+}
+.logo-tagline strong { color: var(--orange); font-weight: 700; display: block; }
+.header-nav { display: flex; align-items: center; gap: 28px; }
+.header-nav a {
+  font-size: 13px; color: var(--ink2);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color .2s;
+}
+.header-nav a:hover { color: var(--orange); }
+.header-tel {
+  display: flex; align-items: center; gap: 7px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--orange) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.06em;
+}
+.header-cta {
+  background: var(--orange) !important; color: var(--white) !important;
+  padding: 10px 24px; border-radius: 100px;
+  font-weight: 700 !important; font-size: 13px !important;
+  white-space: nowrap; transition: background .2s, transform .15s !important;
+}
+.header-cta:hover { background: var(--orange2) !important; transform: translateY(-1px); }
+
+/* ══ HERO ══ */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 70px; overflow: hidden;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 56px 80px 60px; background: var(--white);
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange-lt); border: 1px solid var(--orange-md);
+  color: var(--orange); font-size: 11px; font-weight: 700;
+  padding: 5px 14px; border-radius: 100px; margin-bottom: 28px;
+  letter-spacing: 0.1em; width: fit-content;
+}
+.badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--orange); animation: bdot 2s infinite;
+}
+@keyframes bdot { 0%,100%{opacity:1} 50%{opacity:.35} }
+.hero-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(30px, 3.5vw, 48px); font-weight: 700;
+  line-height: 1.5; letter-spacing: 0.03em; margin-bottom: 24px;
+}
+.hero-title .acc { color: var(--orange); }
+.hero-title .ul {
+  position: relative; display: inline-block;
+}
+.hero-title .ul::after {
+  content: ''; position: absolute; bottom: 2px; left: 0; right: 0;
+  height: 3px; background: linear-gradient(90deg, var(--orange), var(--orange2));
+  border-radius: 2px;
+}
+.hero-desc {
+  font-size: 15px; color: var(--muted);
+  line-height: 1.9; margin-bottom: 40px; max-width: 440px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-o {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange); color: var(--white);
+  padding: 16px 36px; border-radius: 4px;
+  font-size: 15px; font-weight: 700;
+  text-decoration: none; letter-spacing: 0.05em;
+  transition: background .25s, transform .2s;
+  box-shadow: 0 4px 20px rgba(242,106,0,.35);
+}
+.btn-o:hover { background: var(--orange2); transform: translateY(-2px); }
+.btn-g {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid var(--orange); color: var(--orange);
+  padding: 14px 30px; border-radius: 4px;
+  font-size: 15px; font-weight: 700;
+  text-decoration: none; transition: background .2s, color .2s;
+}
+.btn-g:hover { background: var(--orange); color: var(--white); }
+.hero-stats {
+  display: flex; gap: 28px; margin-top: 48px;
+  padding-top: 36px; border-top: 1px solid var(--gray-bd);
+}
+.hstat-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34px; font-weight: 800; color: var(--orange); line-height: 1;
+}
+.hstat-val sup { font-size: 14px; font-weight: 600; vertical-align: super; }
+.hstat-val sub { font-size: 13px; font-weight: 600; }
+.hstat-label { font-size: 11px; color: var(--muted); margin-top: 5px; }
+.hstat-sep { width: 1px; background: var(--gray-bd); align-self: stretch; }
+
+/* Hero right */
+.hero-right {
+  position: relative;
+  background: linear-gradient(160deg, #1a1a1a 0%, #2d1500 100%);
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px 48px; overflow: hidden;
+}
+.hero-right::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(242,106,0,.22) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(255,140,42,.1) 0%, transparent 60%);
+}
+.hero-pat {
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg, rgba(242,106,0,.04) 0, rgba(242,106,0,.04) 1px,
+    transparent 1px, transparent 40px);
+}
+.hcard-wrap { position: relative; z-index: 1; width: 100%; max-width: 400px; }
+.hcard {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.11);
+  border-radius: 16px; padding: 36px; backdrop-filter: blur(12px);
+  position: relative; overflow: hidden;
+}
+.hcard::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: linear-gradient(90deg, var(--orange), var(--orange2));
+}
+.hcard-float {
+  position: absolute; top: -14px; right: 24px;
+  background: var(--orange); color: var(--white);
+  font-size: 11px; font-weight: 700;
+  padding: 6px 16px; border-radius: 100px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 16px rgba(242,106,0,.5);
+}
+.hcard-ey {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px; letter-spacing: .2em; color: var(--orange2);
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.hcard-ttl {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px; font-weight: 700; color: rgba(255,255,255,.85);
+  margin-bottom: 26px;
+}
+.hcard-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.hcol {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px; padding: 16px;
+}
+.hcol.feat {
+  background: rgba(242,106,0,.15);
+  border-color: rgba(242,106,0,.35);
+}
+.hcol-lbl { font-size: 10px; color: rgba(255,255,255,.35); margin-bottom: 8px; }
+.hcol.feat .hcol-lbl { color: var(--orange2); }
+.hcol-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px; font-weight: 700; color: rgba(255,255,255,.7); line-height: 1.1;
+}
+.hcol-val sub { font-size: 12px; font-weight: 400; }
+.hcol.feat .hcol-val { color: var(--orange2); font-size: 26px; }
+.hcol-sub { font-size: 10px; color: rgba(255,255,255,.25); margin-top: 4px; }
+.hcard-diff {
+  background: rgba(242,106,0,.1); border: 1px solid rgba(242,106,0,.25);
+  border-radius: 8px; padding: 14px 18px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.hcard-diff-lbl { font-size: 12px; color: rgba(255,255,255,.5); }
+.hcard-diff-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px; font-weight: 800; color: var(--orange);
+}
+.hcard-diff-val sub { font-size: 12px; }
+.hcard-note { font-size: 10px; color: rgba(255,255,255,.2); margin-top: 14px; line-height: 1.6; }
+
+/* ══ SECTION BASE ══ */
+.sec { padding: 96px 0; }
+.sec-inner { max-width: 1160px; margin: 0 auto; padding: 0 48px; }
+.sec-lbl {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; color: var(--orange);
+  letter-spacing: .25em; text-transform: uppercase;
+  margin-bottom: 14px; font-family: 'Montserrat', sans-serif;
+}
+.sec-lbl::before { content: ''; width: 20px; height: 2px; background: var(--orange); border-radius: 1px; }
+.sec-ttl {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(26px, 3vw, 38px); font-weight: 700;
+  line-height: 1.5; margin-bottom: 14px; letter-spacing: .02em;
+}
+.sec-sub {
+  font-size: 15px; color: var(--muted);
+  line-height: 1.9; max-width: 580px; margin-bottom: 52px;
+}
+
+/* ══ WORRY ══ */
+.worry-sec { background: var(--gray-lt); }
+.worry-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px; margin-top: 48px;
+}
+.worry-card {
+  background: var(--white); border-radius: 12px; padding: 36px 28px;
+  border: 1px solid var(--gray-bd); position: relative; overflow: hidden;
+}
+.worry-card.sol { background: var(--orange); border-color: var(--orange); }
+.worry-picto-wrap {
+  width: 56px; height: 56px;
+  background: var(--orange-lt); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.worry-card.sol .worry-picto-wrap { background: rgba(255,255,255,.2); }
+.worry-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 800; color: var(--orange);
+  letter-spacing: .15em; margin-bottom: 12px;
+}
+.worry-card.sol .worry-num { color: rgba(255,255,255,.6); }
+.worry-ttl { font-size: 17px; font-weight: 700; line-height: 1.5; margin-bottom: 10px; }
+.worry-card.sol .worry-ttl { color: var(--white); }
+.worry-body { font-size: 13.5px; color: var(--muted); line-height: 1.8; }
+.worry-card.sol .worry-body { color: rgba(255,255,255,.8); }
+
+/* ══ MERIT ══ */
+.merit-sec { background: var(--white); }
+.merit-list { display: flex; flex-direction: column; }
+.merit-item {
+  display: grid; grid-template-columns: 80px 1fr 280px;
+  gap: 36px; align-items: center;
+  padding: 44px 0; border-bottom: 1px solid var(--gray-bd);
+}
+.merit-item:first-child { border-top: 1px solid var(--gray-bd); }
+.merit-num-wrap {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.merit-num-wrap span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px; font-weight: 800; color: var(--white);
+}
+.merit-tag {
+  display: inline-block;
+  background: var(--orange-lt); color: var(--orange);
+  font-size: 11px; font-weight: 700;
+  padding: 3px 12px; border-radius: 100px;
+  margin-bottom: 10px; letter-spacing: .1em;
+}
+.merit-ttl {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px; font-weight: 700;
+  margin-bottom: 12px; line-height: 1.5;
+}
+.merit-desc { font-size: 14.5px; color: var(--muted); line-height: 1.9; max-width: 640px; }
+.merit-hl { background: linear-gradient(transparent 60%, var(--orange-md) 60%); font-weight: 700; color: var(--ink); }
+
+/* ══ SIMULATION ══ */
+.sim-sec { background: var(--ink); }
+.sim-sec .sec-lbl { color: var(--orange2); }
+.sim-sec .sec-lbl::before { background: var(--orange2); }
+.sim-sec .sec-ttl { color: var(--white); }
+.sim-sec .sec-sub { color: rgba(255,255,255,.5); }
+.sim-tabs {
+  display: flex; gap: 4px;
+  background: rgba(255,255,255,.06);
+  border-radius: 10px; padding: 5px;
+  width: fit-content; margin-bottom: 36px;
+}
+.sim-tab {
+  padding: 11px 28px; border: none; background: transparent;
+  color: rgba(255,255,255,.4); font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  cursor: pointer; border-radius: 7px; transition: all .2s;
+}
+.sim-tab.on { background: var(--orange); color: var(--white); font-weight: 700; }
+.sim-panel { display: none; }
+.sim-panel.on { display: block; }
+.sim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.sim-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px; padding: 40px;
+}
+.sim-card.feat {
+  border-color: rgba(242,106,0,.35);
+  background: rgba(242,106,0,.05);
+  position: relative;
+}
+.sim-card.feat::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, var(--orange), var(--orange2));
+}
+.sim-ey {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; letter-spacing: .2em;
+  color: rgba(255,255,255,.3); margin-bottom: 4px;
+}
+.sim-card.feat .sim-ey { color: var(--orange2); }
+.sim-ttl {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 28px;
+}
+.sim-rows { display: flex; flex-direction: column; }
+.sim-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.sim-row-lbl { font-size: 13px; color: rgba(255,255,255,.45); }
+.sim-row-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px; font-weight: 700; color: var(--white);
+}
+.sim-row-val.inc { color: #6ee7b7; }
+.sim-result {
+  margin-top: 20px;
+  background: rgba(242,106,0,.12); border: 1px solid rgba(242,106,0,.3);
+  border-radius: 10px; padding: 20px 22px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.sim-result-lbl { font-size: 13px; color: rgba(255,255,255,.6); font-weight: 500; }
+.sim-result-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px; font-weight: 800; color: var(--orange);
+}
+.sim-result-val sub { font-size: 14px; }
+.sim-saving {
+  margin-top: 12px;
+  background: rgba(110,231,183,.07); border: 1px solid rgba(110,231,183,.18);
+  border-radius: 8px; padding: 12px 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.sim-saving-picto { width: 20px; height: 20px; flex-shrink: 0; }
+.sim-saving-txt { font-size: 12px; color: rgba(255,255,255,.4); }
+.sim-saving-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px; font-weight: 800; color: #6ee7b7; margin-left: auto;
+}
+.sim-saving-val sub { font-size: 11px; }
+.sim-note { font-size: 11px; color: rgba(255,255,255,.2); margin-top: 18px; line-height: 1.65; }
+
+/* ══ FLOW ══ */
+.flow-sec { background: var(--orange-lt); }
+.flow-steps {
+  display: grid; grid-template-columns: repeat(5,1fr);
+  gap: 0; margin-top: 52px; position: relative;
+}
+.flow-line {
+  position: absolute; top: 44px; left: calc(10% + 28px); right: calc(10% + 28px);
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--orange) 0, var(--orange) 8px, transparent 8px, transparent 16px);
+  opacity: .4;
+}
+.flow-step {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 0 12px; position: relative;
+}
+.flow-icon {
+  width: 88px; height: 88px;
+  background: var(--white); border: 2px solid var(--orange-md);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px; position: relative; z-index: 1;
+  box-shadow: 0 4px 20px rgba(242,106,0,.1);
+  transition: border-color .25s, transform .25s;
+}
+.flow-step:hover .flow-icon { border-color: var(--orange); transform: translateY(-4px); }
+.flow-step-num {
+  position: absolute; top: -6px; right: -6px;
+  width: 26px; height: 26px; background: var(--orange); border-radius: 50%;
+  color: var(--white); font-size: 12px; font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  display: flex; align-items: center; justify-content: center;
+}
+.flow-ttl { font-size: 13.5px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+.flow-desc { font-size: 12px; color: var(--muted); line-height: 1.65; }
+
+/* ══ WHY ══ */
+.why-sec { background: var(--white); }
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 52px; }
+.why-card {
+  border: 1px solid var(--gray-bd); border-radius: 12px; padding: 32px 26px;
+  position: relative; overflow: hidden;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.why-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: 0 12px 36px rgba(242,106,0,.12); }
+.why-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--orange);
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.why-card:hover::before { transform: scaleX(1); }
+.why-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 800; color: var(--orange);
+  letter-spacing: .12em; margin-bottom: 16px;
+}
+.why-picto-wrap {
+  width: 52px; height: 52px; background: var(--orange-lt);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.why-ttl {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 17px; font-weight: 700; margin-bottom: 10px; line-height: 1.5;
+}
+.why-desc { font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+/* ══ VOICE ══ */
+.voice-sec { background: var(--gray-lt); }
+.voice-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 52px; }
+.voice-card {
+  background: var(--white); border-radius: 12px; padding: 32px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.06); position: relative;
+}
+.voice-qt-mark {
+  position: absolute; top: 14px; left: 20px;
+  width: 28px; height: 20px; opacity: .18;
+}
+.voice-txt { font-size: 14px; line-height: 1.85; margin-bottom: 20px; padding-top: 22px; }
+.voice-person {
+  display: flex; align-items: center; gap: 14px;
+  padding-top: 18px; border-top: 1px solid var(--gray-bd);
+}
+.voice-av {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--orange2));
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.voice-name { font-size: 13px; font-weight: 700; }
+.voice-attr { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.voice-stars { margin-bottom: 2px; display: flex; gap: 2px; }
+
+/* ══ CTA ══ */
+.cta-sec {
+  background: var(--orange); padding: 96px 0;
+  position: relative; overflow: hidden;
+}
+.cta-sec::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(-45deg,
+    rgba(255,255,255,.03) 0, rgba(255,255,255,.03) 1px,
+    transparent 1px, transparent 40px);
+}
+.cta-sec::after {
+  content: 'IEGAO'; position: absolute; right: -2%; bottom: -8%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 200px; font-weight: 800; color: rgba(255,255,255,.06);
+  line-height: 1; pointer-events: none;
+}
+.cta-inner { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 0 48px; text-align: center; }
+.cta-ttl {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(28px,4vw,44px); font-weight: 700; color: var(--white);
+  line-height: 1.5; margin-bottom: 18px;
+}
+.cta-desc { font-size: 15px; color: rgba(255,255,255,.8); line-height: 1.9; margin-bottom: 52px; }
+.cta-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 36px; }
+.cta-box {
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+  border-radius: 12px; padding: 36px 30px;
+  text-align: left; text-decoration: none; display: block;
+  transition: background .2s, transform .2s;
+}
+.cta-box:hover { background: rgba(255,255,255,.2); transform: translateY(-3px); }
+.cta-box-picto {
+  width: 44px; height: 44px; margin-bottom: 16px;
+}
+.cta-box-ttl { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.cta-box-desc { font-size: 13px; color: rgba(255,255,255,.7); line-height: 1.7; }
+.cta-box-arr {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--white); font-size: 13px; font-weight: 700; margin-top: 14px;
+}
+.cta-note { font-size: 12px; color: rgba(255,255,255,.6); }
+.cta-tel {
+  font-family: 'Montserrat', sans-serif;
+  color: white; font-weight: 800; font-size: 18px; text-decoration: none;
+  letter-spacing: .06em;
+}
+
+/* ══ FOOTER ══ */
+.site-footer { background: #111; }
+.footer-main {
+  max-width: 1160px; margin: 0 auto;
+  padding: 64px 48px 48px;
+  display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 52px;
+}
+.footer-brand-desc { font-size: 12.5px; color: rgba(255,255,255,.3); line-height: 1.9; margin-top: 14px; }
+.footer-tel-wrap { margin-top: 18px; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.footer-tel-lbl { font-size: 10px; color: rgba(255,255,255,.3); letter-spacing: .1em; margin-bottom: 4px; }
+.footer-tel-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px; font-weight: 700; color: var(--orange);
+}
+.footer-tel-addr { font-size: 11px; color: rgba(255,255,255,.2); margin-top: 4px; }
+.footer-col-ttl {
+  font-size: 11px; font-weight: 700; color: rgba(255,255,255,.5);
+  letter-spacing: .15em; margin-bottom: 16px;
+  text-transform: uppercase; font-family: 'Montserrat', sans-serif;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,.3); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--orange); }
+.footer-bottom {
+  max-width: 1160px; margin: 0 auto; padding: 20px 48px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { font-size: 11.5px; color: rgba(255,255,255,.22); }
+.footer-btm-links { display: flex; gap: 20px; }
+.footer-btm-links a { font-size: 11.5px; color: rgba(255,255,255,.22); text-decoration: none; transition: color .2s; }
+.footer-btm-links a:hover { color: var(--orange); }
+
+/* ══ FLOATING ══ */
+.floating { position: fixed; bottom: 24px; right: 24px; z-index: 300; display: flex; flex-direction: column; gap: 10px; }
+.float-btn {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--orange); color: var(--white);
+  padding: 14px 22px; border-radius: 100px;
+  text-decoration: none; font-size: 14px; font-weight: 700;
+  box-shadow: 0 6px 28px rgba(242,106,0,.45);
+  transition: transform .2s, box-shadow .2s;
+}
+.float-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(242,106,0,.55); }
+.float-btn.dark {
+  background: rgba(26,26,26,.96); border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 6px 24px rgba(0,0,0,.4);
+  font-family: 'Montserrat', sans-serif; letter-spacing: .06em;
+}
+.float-btn.dark:hover { box-shadow: 0 10px 36px rgba(0,0,0,.5); }
+.live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #fff; flex-shrink: 0; animation: ld 1.8s infinite;
+}
+@keyframes ld { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.35;transform:scale(.7)} }
+
+/* ══ FADE ══ */
+.fi { opacity: 0; transform: translateY(28px); transition: opacity .7s, transform .7s; }
+.fi.v { opacity: 1; transform: none; }
+.d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s}
+
+/* ══ HERO IMAGE ══ */
+.hero-right-img {
+  position: absolute; inset: 0; z-index: 0;
+  overflow: hidden;
+}
+.hero-right-img img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  opacity: .35;
+  filter: saturate(.7);
+}
+
+.merit-img {
+  width: 280px; height: 190px;
+  border-radius: 10px; overflow: hidden;
+  flex-shrink: 0; align-self: center;
+}
+.merit-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s;
+}
+.merit-item:hover .merit-img img { transform: scale(1.05); }
+
+/* ══ GALLERY SECTION ══ */
+.gallery-sec { background: var(--ink); padding: 96px 0; }
+.gallery-sec .sec-lbl { color: var(--orange2); }
+.gallery-sec .sec-lbl::before { background: var(--orange2); }
+.gallery-sec .sec-ttl { color: var(--white); }
+.gallery-sec .sec-sub { color: rgba(255,255,255,.5); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 260px 260px;
+  gap: 8px;
+  border-radius: 12px; overflow: hidden;
+}
+.gallery-item {
+  position: relative; overflow: hidden; cursor: pointer;
+}
+.gallery-item:first-child {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s ease;
+}
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 60%);
+  display: flex; align-items: flex-end; padding: 20px;
+  opacity: 0; transition: opacity .3s;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-caption {
+  font-size: 12px; font-weight: 700; color: var(--white);
+  letter-spacing: .08em;
+}
+.gallery-tag {
+  display: inline-block;
+  background: var(--orange); color: var(--white);
+  font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 100px;
+  letter-spacing: .1em; margin-bottom: 6px;
+}
+
+/* ══ VOICE BANNER ══ */
+.voice-banner {
+  width: 100%; height: 280px;
+  border-radius: 12px; overflow: hidden;
+  position: relative; margin-bottom: 52px;
+}
+.voice-banner img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
+}
+.voice-banner-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(26,26,26,.75) 0%, rgba(26,26,26,.2) 60%, transparent 100%);
+  display: flex; align-items: center; padding: 0 52px;
+}
+.voice-banner-copy {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 28px; font-weight: 700; color: var(--white);
+  line-height: 1.55; max-width: 420px;
+}
+.voice-banner-copy span {
+  display: inline-block; color: var(--orange2);
+}
+
+/* ══ CTA background image ══ */
+.cta-bg-img {
+  position: absolute; inset: 0; z-index: 0;
+}
+.cta-bg-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: .12;
+  filter: saturate(.5);
+}
+
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr} .hero-right{display:none}
+  .worry-grid,.why-grid,.voice-grid,.cta-boxes,.sim-grid{grid-template-columns:1fr}
+  .flow-steps{grid-template-columns:1fr 1fr;gap:24px} .flow-line{display:none}
+  .footer-main{grid-template-columns:1fr 1fr} .header-nav{display:none}
+  .merit-item{grid-template-columns: 80px 1fr !important}
+  .merit-img{display:none}
+  .gallery-grid{grid-template-columns:1fr 1fr; grid-template-rows:200px 200px 200px}
+  .gallery-item:first-child{grid-row:auto}
+  .voice-banner{height:200px}
+  .voice-banner-copy{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <a href="https://www.iegao.co.jp/" class="logo-link">
+    <svg width="136" height="40" viewBox="0 0 136 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 家シルエット -->
+      <path d="M21 22 L27 16 L33 22 L33 30 L21 30 Z" fill="#F26A00"/>
+      <rect x="25" y="24" width="4" height="6" fill="white"/>
+      <path d="M27 11 L37 21 L35 21 L27 14 L19 21 L17 21 Z" fill="#F26A00"/>
+      <!-- テキスト -->
+      <text x="42" y="27" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" fill="#1A1A1A" letter-spacing="1">IEGAO</text>
+      <!-- オレンジライン -->
+      <rect x="42" y="32" width="88" height="2.5" rx="1.25" fill="#F26A00"/>
+    </svg>
+    <div class="logo-tagline">
+      いい家×いい笑顔
+      <strong>株式会社イエガオ</strong>
+    </div>
+  </a>
+  <nav class="header-nav">
+    <a href="#merit">賃貸併用の魅力</a>
+    <a href="#simulation">収支シミュレーション</a>
+    <a href="#flow">ご相談の流れ</a>
+    <a href="#why">選ばれる理由</a>
+    <a href="tel:0368050802" class="header-tel">
+      <!-- 電話ピクトグラム -->
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.27-.34a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      03-6805-0802
+    </a>
+    <a href="#contact" class="header-cta">無料相談する</a>
+  </nav>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><div class="badge-dot"></div>賃貸併用住宅 特集ページ</div>
+    <h1 class="hero-title">
+      住みながら<br>
+      <span class="acc">家賃収入</span>を得る。<br>
+      <span class="ul">いい家×いい笑顔</span><br>
+      の新しいカタチ。
+    </h1>
+    <p class="hero-desc">
+      賃貸併用住宅は、自宅と賃貸を一棟にまとめた「収入を生む住まい」です。
+      入居者の家賃収入でローン負担を軽減し、
+      あなたの理想の暮らしとライフプランを同時に実現します。
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-o">無料相談・資料請求 →</a>
+      <a href="#simulation" class="btn-g">収支を試算する</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hstat-val"><sup>月</sup>1.7<sub>万円〜</sub></div>
+        <div class="hstat-label">実質住居費の目安（例）</div>
+      </div>
+      <div class="hstat-sep"></div>
+      <div>
+        <div class="hstat-val">0.5<sub>%〜</sub></div>
+        <div class="hstat-label">住宅ローン金利（目安）</div>
+      </div>
+      <div class="hstat-sep"></div>
+      <div>
+        <div class="hstat-val">35<sub>年</sub></div>
+        <div class="hstat-label">住宅ローン最長返済期間</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-img">
+      <img src="https://images.unsplash.com/photo-1558869632-279458ac1734?w=1200&q=80&auto=format&fit=crop" alt="賃貸併用住宅 外観イメージ" style="object-position:center center" loading="eager">
+    </div>
+    <div class="hero-pat"></div>
+    <div class="hcard-wrap">
+      <div class="hcard">
+        <div class="hcard-float">IEGAO 試算例</div>
+        <div class="hcard-ey">Monthly Cost Comparison</div>
+        <div class="hcard-ttl">月々の実質住居費を比べると</div>
+        <div class="hcard-cols">
+          <div class="hcol">
+            <div class="hcol-lbl">通常の自宅のみ</div>
+            <div class="hcol-val">5.1<sub>万円</sub></div>
+            <div class="hcol-sub">月々のローン返済</div>
+          </div>
+          <div class="hcol feat">
+            <div class="hcol-lbl">賃貸併用住宅</div>
+            <div class="hcol-val">1.7<sub>万円</sub></div>
+            <div class="hcol-sub">家賃収入差し引き後</div>
+          </div>
+        </div>
+        <div class="hcard-diff">
+          <div class="hcard-diff-lbl">月々の差額（お得な金額）</div>
+          <div class="hcard-diff-val">▲ 3.4<sub>万/月</sub></div>
+        </div>
+        <p class="hcard-note">建物面積60坪、借入3,600万円（金利1.0%・35年）、家賃7万円×2室の試算例。実際のケースにより異なります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WORRY ══ -->
+<section class="sec worry-sec">
+  <div class="sec-inner">
+    <div class="sec-lbl fi">こんなお悩みはありませんか？</div>
+    <h2 class="sec-ttl fi">住まいへの「もっと」を<br>あきらめる前に。</h2>
+    <div class="worry-grid">
+      <div class="worry-card fi">
+        <div class="worry-picto-wrap">
+          <!-- 地図ピン／立地 -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="worry-num">WORRY 01</div>
+        <h3 class="worry-ttl">住みたいエリアの土地が<br>予算オーバーで…</h3>
+        <p class="worry-body">好立地・駅近の土地は高くて手が出ない。妥協した場所を選ぶしかないのかと悩んでいませんか？</p>
+      </div>
+      <div class="worry-card fi d1">
+        <div class="worry-picto-wrap">
+          <!-- 財布／費用 -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 14a1 1 0 100-2 1 1 0 000 2z" fill="#F26A00" stroke="none"/><path d="M22 10V7a2 2 0 00-2-2H4a2 2 0 00-2 2v3"/>
+          </svg>
+        </div>
+        <div class="worry-num">WORRY 02</div>
+        <h3 class="worry-ttl">こだわりを叶えると<br>ローンがきつくなって…</h3>
+        <p class="worry-body">広さ・設備・デザインにこだわると毎月の返済が不安。夢と現実のギャップに悩んでいませんか？</p>
+      </div>
+      <div class="worry-card sol fi d2">
+        <div class="worry-picto-wrap">
+          <!-- 家＋チェック -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+            <polyline points="9 21 9 13 15 13 15 21"/>
+            <polyline points="8 7 12 4 16 7" stroke="white"/>
+            <polyline points="7 14 10 17 17 11" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="worry-num">SOLUTION</div>
+        <h3 class="worry-ttl">賃貸併用住宅が<br>その答えです</h3>
+        <p class="worry-body">入居者の家賃収入でローン返済を軽減。理想の立地・間取り・設備を叶えながら、実質住居費を大幅に圧縮できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MERIT ══ -->
+<section class="sec merit-sec" id="merit">
+  <div class="sec-inner">
+    <div class="sec-lbl fi">賃貸併用住宅の魅力</div>
+    <h2 class="sec-ttl fi">3つの大きなメリット</h2>
+    <p class="sec-sub fi">低金利の住宅ローンを活かしながら、家賃収入・節税・保障を一体設計。資産形成と豊かな暮らしをIEGAOが実現します。</p>
+    <div class="merit-list">
+      <div class="merit-item fi">
+        <div class="merit-num-wrap"><span>1</span></div>
+        <div>
+          <div class="merit-tag">CASHFLOW</div>
+          <h3 class="merit-ttl">家賃収入でローンの実質負担を大幅に軽減</h3>
+          <p class="merit-desc">入居者が支払う家賃をそのままローン返済に充当できます。月々の実質住居費は大幅に圧縮され、通常の注文住宅では難しかった<span class="merit-hl">好立地・広い間取り・こだわりの設備</span>が実現可能に。「自分の家なのに、払うのは入居者」という発想の転換がポイントです。</p>
+        </div>
+        <div class="merit-img">
+          <img src="https://images.unsplash.com/photo-1669612803668-2b2a770f9890?w=600&q=80&auto=format&fit=crop" alt="住宅外観イメージ" style="object-position:center center" loading="lazy">
+        </div>
+      </div>
+      <div class="merit-item fi d1">
+        <div class="merit-num-wrap"><span>2</span></div>
+        <div>
+          <div class="merit-tag">FINANCE</div>
+          <h3 class="merit-ttl">住宅ローンの低金利を最大限に活用できる</h3>
+          <p class="merit-desc">一般的な投資用ローン（年2〜4%）と比べ、住宅ローンは<span class="merit-hl">年0.5〜1.5%と圧倒的に低金利</span>です。自宅部分が50%以上の場合は住宅ローンが適用可能。この金利差が長期で大きな差を生みます。万一に備える団体信用生命保険（団信）も適用されます。</p>
+        </div>
+        <div class="merit-img">
+          <img src="https://images.unsplash.com/photo-1712232907812-4bd219a99a49?w=600&q=80&auto=format&fit=crop" alt="住宅ローン・資金計画イメージ" style="object-position:center top" loading="lazy">
+        </div>
+      </div>
+      <div class="merit-item fi d2">
+        <div class="merit-num-wrap"><span>3</span></div>
+        <div>
+          <div class="merit-tag">TAX &amp; ASSET</div>
+          <h3 class="merit-ttl">節税効果と不動産資産が同時に手に入る</h3>
+          <p class="merit-desc">賃貸部分の管理費・修繕費・減価償却は不動産所得の経費として計上でき、<span class="merit-hl">所得税の軽減</span>が期待できます。住宅ローン控除も自宅面積比率分で適用可能。固定資産税・相続税評価も一般の場合より有利になるケースがあります。</p>
+        </div>
+        <div class="merit-img">
+          <img src="https://images.unsplash.com/photo-1698879837900-9dd9c4c2db80?w=600&q=80&auto=format&fit=crop" alt="明るいリビングイメージ" style="object-position:center center" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SIMULATION ══ -->
+<section class="sec sim-sec" id="simulation">
+  <div class="sec-inner">
+    <div class="sec-lbl fi">収支シミュレーション</div>
+    <h2 class="sec-ttl fi">自宅のみ vs 賃貸併用住宅<br>月々の住居費を比較</h2>
+    <p class="sec-sub fi">実際の数字で差をご確認ください。</p>
+    <div class="sim-tabs">
+      <button class="sim-tab on" onclick="switchSim(event,'land')">土地をお持ちの場合</button>
+      <button class="sim-tab" onclick="switchSim(event,'buy')">土地から購入する場合</button>
+    </div>
+    <!-- 土地あり -->
+    <div class="sim-panel on" id="sp-land">
+      <div class="sim-grid">
+        <div class="sim-card fi">
+          <div class="sim-ey">CASE A</div>
+          <div class="sim-ttl">自宅のみの場合</div>
+          <div class="sim-rows">
+            <div class="sim-row"><span class="sim-row-lbl">建築費</span><span class="sim-row-val">1,900万円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">月々のローン返済</span><span class="sim-row-val">50,811円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">家賃収入</span><span class="sim-row-val" style="color:rgba(255,255,255,.2)">－</span></div>
+          </div>
+          <div class="sim-result">
+            <span class="sim-result-lbl">月々の実質住居費</span>
+            <span class="sim-result-val">50,811<sub>円</sub></span>
+          </div>
+          <p class="sim-note">建物面積30坪 / 自己資金100万円 / 借入1,800万円 / 金利1.0% / 返済35年にて試算</p>
+        </div>
+        <div class="sim-card feat fi d1">
+          <div class="sim-ey">CASE B — おすすめ</div>
+          <div class="sim-ttl">賃貸併用住宅の場合</div>
+          <div class="sim-rows">
+            <div class="sim-row"><span class="sim-row-lbl">建築費</span><span class="sim-row-val">3,700万円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">月々のローン返済</span><span class="sim-row-val">101,622円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">家賃収入（7万円×2室）</span><span class="sim-row-val inc">▲ 119,000円</span></div>
+          </div>
+          <div class="sim-result">
+            <span class="sim-result-lbl">月々の実質住居費</span>
+            <span class="sim-result-val">17,378<sub>円</sub></span>
+          </div>
+          <div class="sim-saving">
+            <!-- 節約ピクトグラム -->
+            <svg class="sim-saving-picto" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+            <span class="sim-saving-txt">自宅のみより月々お得な金額</span>
+            <span class="sim-saving-val">▲ 33,433<sub>円</sub></span>
+          </div>
+          <p class="sim-note">建物面積60坪 / 自己資金100万円 / 借入3,600万円 / 金利1.0% / 返済35年にて試算<br>賃貸管理費・諸税等は15%換算（ケースにより異なります）</p>
+        </div>
+      </div>
+    </div>
+    <!-- 土地購入 -->
+    <div class="sim-panel" id="sp-buy">
+      <div class="sim-grid">
+        <div class="sim-card fi">
+          <div class="sim-ey">CASE A</div>
+          <div class="sim-ttl">自宅のみの場合</div>
+          <div class="sim-rows">
+            <div class="sim-row"><span class="sim-row-lbl">土地費用</span><span class="sim-row-val">1,800万円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">建築費</span><span class="sim-row-val">1,900万円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">月々のローン返済</span><span class="sim-row-val">101,622円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">家賃収入</span><span class="sim-row-val" style="color:rgba(255,255,255,.2)">－</span></div>
+          </div>
+          <div class="sim-result">
+            <span class="sim-result-lbl">月々の実質住居費</span>
+            <span class="sim-result-val">101,622<sub>円</sub></span>
+          </div>
+          <p class="sim-note">建物面積30坪 / 自己資金100万円 / 借入3,600万円 / 金利1.0% / 返済35年にて試算</p>
+        </div>
+        <div class="sim-card feat fi d1">
+          <div class="sim-ey">CASE B — おすすめ</div>
+          <div class="sim-ttl">賃貸併用住宅の場合</div>
+          <div class="sim-rows">
+            <div class="sim-row"><span class="sim-row-lbl">土地費用</span><span class="sim-row-val">1,800万円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">建築費</span><span class="sim-row-val">3,700万円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">月々のローン返済</span><span class="sim-row-val">152,433円</span></div>
+            <div class="sim-row"><span class="sim-row-lbl">家賃収入（7万円×2室）</span><span class="sim-row-val inc">▲ 119,000円</span></div>
+          </div>
+          <div class="sim-result">
+            <span class="sim-result-lbl">月々の実質住居費</span>
+            <span class="sim-result-val">33,433<sub>円</sub></span>
+          </div>
+          <div class="sim-saving">
+            <svg class="sim-saving-picto" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+            <span class="sim-saving-txt">自宅のみより月々お得な金額</span>
+            <span class="sim-saving-val">▲ 68,189<sub>円</sub></span>
+          </div>
+          <p class="sim-note">建物面積60坪 / 自己資金100万円 / 借入5,400万円 / 金利1.0% / 返済35年にて試算<br>賃貸管理費・諸税等は15%換算（ケースにより異なります）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ══ -->
+<section class="gallery-sec">
+  <div class="sec-inner">
+    <div class="sec-lbl fi">施工事例</div>
+    <h2 class="sec-ttl fi">IEGAOの手がけた<br>賃貸併用住宅</h2>
+    <p class="sec-sub fi">「いい家×いい笑顔」を体現した施工事例をご紹介します。<br>（写真はイメージです。実際の施工事例は担当者よりご案内します）</p>
+    <div class="gallery-grid fi">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1558869632-279458ac1734?w=900&q=80&auto=format&fit=crop" alt="施工事例1 外観" loading="lazy">
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-tag">東京都 / 2LDK＋1K×2室</div>
+            <div class="gallery-caption">緑に囲まれた温かみのある一軒家</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1723698634159-849048be3cf3?w=600&q=80&auto=format&fit=crop" alt="施工事例2 和室" loading="lazy">
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-tag">和室・縁側</div>
+            <div class="gallery-caption">光と風を取り込む和モダンな居室</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1669612803668-2b2a770f9890?w=600&q=80&auto=format&fit=crop" alt="施工事例3 外観" loading="lazy">
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-tag">神奈川県 / 3LDK＋1K×1室</div>
+            <div class="gallery-caption">木のぬくもりが感じられる外観</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1566204978576-77f6addcef4d?w=600&q=80&auto=format&fit=crop" alt="施工事例4 外観" loading="lazy">
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-tag">愛知県 / 3LDK＋1K×2室</div>
+            <div class="gallery-caption">日本の街並みに馴染む瓦屋根の家</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1712232907812-4bd219a99a49?w=600&q=80&auto=format&fit=crop" alt="施工事例5 縁側" loading="lazy">
+        <div class="gallery-overlay">
+          <div>
+            <div class="gallery-tag">縁側・庭</div>
+            <div class="gallery-caption">庭を望む贅沢な縁側スペース</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FLOW ══ -->
+<section class="sec flow-sec" id="flow">
+  <div class="sec-inner">
+    <div class="sec-lbl fi">ご相談から完成まで</div>
+    <h2 class="sec-ttl fi">IEGAOのサポートの流れ</h2>
+    <p class="sec-sub fi">はじめての方もご安心ください。ご相談からお引き渡しまで、IEGAOが一貫してサポートします。</p>
+    <div class="flow-steps">
+      <div class="flow-line"></div>
+      <!-- STEP 1 -->
+      <div class="flow-step fi">
+        <div class="flow-icon">
+          <div class="flow-step-num">1</div>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+        </div>
+        <div class="flow-ttl">無料相談</div>
+        <div class="flow-desc">ご要望・予算・ライフプランをお聞きします。オンライン対応も可能。</div>
+      </div>
+      <!-- STEP 2 -->
+      <div class="flow-step fi d1">
+        <div class="flow-icon">
+          <div class="flow-step-num">2</div>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <div class="flow-ttl">収支計画・<br>プラン提案</div>
+        <div class="flow-desc">立地・家賃相場を分析し、最適な建物プランと収支計画をご提案。</div>
+      </div>
+      <!-- STEP 3 -->
+      <div class="flow-step fi d2">
+        <div class="flow-icon">
+          <div class="flow-step-num">3</div>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <div class="flow-ttl">設計・施工</div>
+        <div class="flow-desc">プライバシー・遮音・動線を徹底設計。入居者に選ばれる住宅を建築。</div>
+      </div>
+      <!-- STEP 4 -->
+      <div class="flow-step fi d3">
+        <div class="flow-icon">
+          <div class="flow-step-num">4</div>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <div class="flow-ttl">入居者募集・<br>管理</div>
+        <div class="flow-desc">管理会社と連携し、空室リスクを最小化する運営体制を整備。</div>
+      </div>
+      <!-- STEP 5 -->
+      <div class="flow-step fi d4">
+        <div class="flow-icon">
+          <div class="flow-step-num">5</div>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+            <polyline points="9 21 9 13 15 13 15 21"/>
+          </svg>
+        </div>
+        <div class="flow-ttl">お引き渡し・<br>アフターサポート</div>
+        <div class="flow-desc">入居開始後も定期フォロー。長期的な資産管理をご支援します。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY ══ -->
+<section class="sec why-sec" id="why">
+  <div class="sec-inner">
+    <div class="sec-lbl fi">選ばれる理由</div>
+    <h2 class="sec-ttl fi">IEGAOが選ばれる<br>6つの理由</h2>
+    <p class="sec-sub fi">「いい家×いい笑顔」を実現するために、IEGAOは設計・融資・税務・管理まで一貫してサポートします。</p>
+    <div class="why-grid">
+      <div class="why-card fi">
+        <div class="why-num">REASON 01</div>
+        <div class="why-picto-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+            <polyline points="9 21 9 13 15 13 15 21"/>
+          </svg>
+        </div>
+        <h3 class="why-ttl">住宅のプロによる<br>一体設計</h3>
+        <p class="why-desc">自宅の快適性と賃貸の収益性を両立。プライバシー・動線・遮音を徹底追求した設計力。</p>
+      </div>
+      <div class="why-card fi d1">
+        <div class="why-num">REASON 02</div>
+        <div class="why-picto-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <h3 class="why-ttl">地域の賃料相場を<br>徹底調査</h3>
+        <p class="why-desc">エリアの賃貸需要・競合物件・空室率を分析し、現実的で安定した収支計画をご提案します。</p>
+      </div>
+      <div class="why-card fi d2">
+        <div class="why-num">REASON 03</div>
+        <div class="why-picto-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 14a1 1 0 100-2 1 1 0 000 2z" fill="#F26A00" stroke="none"/><path d="M22 10V7a2 2 0 00-2-2H4a2 2 0 00-2 2v3"/>
+          </svg>
+        </div>
+        <h3 class="why-ttl">住宅ローン・融資の<br>無料相談</h3>
+        <p class="why-desc">複数の金融機関と連携し、最適な融資条件を引き出します。審査のポイントも丁寧にご説明。</p>
+      </div>
+      <div class="why-card fi">
+        <div class="why-num">REASON 04</div>
+        <div class="why-picto-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <h3 class="why-ttl">節税・税務の<br>専門家と連携</h3>
+        <p class="why-desc">税理士・FPとのネットワークで住宅ローン控除・不動産所得控除・相続税対策をトータルサポート。</p>
+      </div>
+      <div class="why-card fi d1">
+        <div class="why-num">REASON 05</div>
+        <div class="why-picto-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="why-ttl">空室リスクを<br>最小化する管理体制</h3>
+        <p class="why-desc">入居者募集から家賃管理・修繕まで、信頼できる管理会社とのパートナーシップで安心運営。</p>
+      </div>
+      <div class="why-card fi d2">
+        <div class="why-num">REASON 06</div>
+        <div class="why-picto-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <h3 class="why-ttl">完成後も続く<br>アフターサポート</h3>
+        <p class="why-desc">お引き渡し後も定期的にご連絡。ライフステージの変化に合わせた最適な提案を続けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VOICE ══ -->
+<section class="sec voice-sec">
+  <div class="sec-inner">
+    <div class="sec-lbl fi">お客さまの声</div>
+    <h2 class="sec-ttl fi">賃貸併用住宅を<br>選んでよかった</h2>
+    <div class="voice-banner fi">
+      <img src="https://images.unsplash.com/photo-1570640524401-7be7b14c7079?w=1400&q=80&auto=format&fit=crop" alt="日本の家と庭" loading="lazy" style="object-position:center 30%">
+      <div class="voice-banner-overlay">
+        <div class="voice-banner-copy">
+          日本の家が持つ、<br>
+          <span>温かさと安心感</span>を。<br>
+          次の世代へつなぐ家づくり。
+        </div>
+      </div>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card fi">
+        <!-- 引用ピクトグラム -->
+        <svg class="voice-qt-mark" viewBox="0 0 40 28" fill="#F26A00" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 28V17.6C0 8.4 5.6 2.4 16.8 0l2.4 3.6C13.2 5.2 10 8.8 9.6 13.6H16V28H0zm22.4 0V17.6C22.4 8.4 28 2.4 39.2 0l2.4 3.6c-6 1.6-9.2 5.2-9.6 10H38.4V28H22.4z"/>
+        </svg>
+        <p class="voice-txt">IEGAOさんが最初に作ってくれた収支計画通りで、本当に安心しました。家賃収入のおかげで、月々の実質支払いが賃貸の頃より安くなりました。</p>
+        <div class="voice-person">
+          <div class="voice-av">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="voice-stars">
+              <svg width="60" height="12" viewBox="0 0 70 14"><g fill="#F26A00">
+                <polygon points="7,0 9,5 14,5 10,8 12,13 7,10 2,13 4,8 0,5 5,5"/>
+                <polygon points="21,0 23,5 28,5 24,8 26,13 21,10 16,13 18,8 14,5 19,5"/>
+                <polygon points="35,0 37,5 42,5 38,8 40,13 35,10 30,13 32,8 28,5 33,5"/>
+                <polygon points="49,0 51,5 56,5 52,8 54,13 49,10 44,13 46,8 42,5 47,5"/>
+                <polygon points="63,0 65,5 70,5 66,8 68,13 63,10 58,13 60,8 56,5 61,5"/>
+              </g></svg>
+            </div>
+            <div class="voice-name">S.T.様（40代・会社員）</div>
+            <div class="voice-attr">2LDK自宅＋1K×2室 / 東京都</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card fi d1">
+        <svg class="voice-qt-mark" viewBox="0 0 40 28" fill="#F26A00" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 28V17.6C0 8.4 5.6 2.4 16.8 0l2.4 3.6C13.2 5.2 10 8.8 9.6 13.6H16V28H0zm22.4 0V17.6C22.4 8.4 28 2.4 39.2 0l2.4 3.6c-6 1.6-9.2 5.2-9.6 10H38.4V28H22.4z"/>
+        </svg>
+        <p class="voice-txt">賃貸部分のプライバシーが心配でしたが、玄関・動線が完全に分離された設計で全く気になりません。設計段階からしっかり相談に乗っていただけました。</p>
+        <div class="voice-person">
+          <div class="voice-av">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="voice-stars">
+              <svg width="60" height="12" viewBox="0 0 70 14"><g fill="#F26A00">
+                <polygon points="7,0 9,5 14,5 10,8 12,13 7,10 2,13 4,8 0,5 5,5"/>
+                <polygon points="21,0 23,5 28,5 24,8 26,13 21,10 16,13 18,8 14,5 19,5"/>
+                <polygon points="35,0 37,5 42,5 38,8 40,13 35,10 30,13 32,8 28,5 33,5"/>
+                <polygon points="49,0 51,5 56,5 52,8 54,13 49,10 44,13 46,8 42,5 47,5"/>
+                <polygon points="63,0 65,5 70,5 66,8 68,13 63,10 58,13 60,8 56,5 61,5"/>
+              </g></svg>
+            </div>
+            <div class="voice-name">K.M.様（30代・共働き夫婦）</div>
+            <div class="voice-attr">LDK自宅＋1LDK×1室 / 三重県</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card fi d2">
+        <svg class="voice-qt-mark" viewBox="0 0 40 28" fill="#F26A00" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 28V17.6C0 8.4 5.6 2.4 16.8 0l2.4 3.6C13.2 5.2 10 8.8 9.6 13.6H16V28H0zm22.4 0V17.6C22.4 8.4 28 2.4 39.2 0l2.4 3.6c-6 1.6-9.2 5.2-9.6 10H38.4V28H22.4z"/>
+        </svg>
+        <p class="voice-txt">節税の仕組みまで親身に教えてもらい、想定以上に手元に残るお金が増えました。単なる家づくりではなく、資産形成の相談相手として信頼しています。</p>
+        <div class="voice-person">
+          <div class="voice-av">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="voice-stars">
+              <svg width="54" height="12" viewBox="0 0 63 14"><g fill="#F26A00">
+                <polygon points="7,0 9,5 14,5 10,8 12,13 7,10 2,13 4,8 0,5 5,5"/>
+                <polygon points="21,0 23,5 28,5 24,8 26,13 21,10 16,13 18,8 14,5 19,5"/>
+                <polygon points="35,0 37,5 42,5 38,8 40,13 35,10 30,13 32,8 28,5 33,5"/>
+                <polygon points="49,0 51,5 56,5 52,8 54,13 49,10 44,13 46,8 42,5 47,5"/>
+              </g><g fill="#E0E0E0"><polygon points="63,0 65,5 70,5 66,8 68,13 63,10 58,13 60,8 56,5 61,5"/></g></svg>
+            </div>
+            <div class="voice-name">H.Y.様（50代・自営業）</div>
+            <div class="voice-attr">3LDK自宅＋1K×2室 / 愛知県</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-sec" id="contact">
+  <div class="cta-bg-img">
+    <img src="https://images.unsplash.com/photo-1558869632-279458ac1734?w=1800&q=70&auto=format&fit=crop" alt="" style="object-position:center 40%" loading="lazy">
+  </div>
+  <div class="cta-inner">
+    <h2 class="cta-ttl fi">まずは、気軽にご相談ください。<br><small style="font-size:.6em;color:rgba(255,255,255,.75)">いい家×いい笑顔 — IEGAO</small></h2>
+    <p class="cta-desc fi">「土地はある」「これから探したい」「まだ検討中」など、どの段階の方もお気軽にどうぞ。<br>相談・資料請求はすべて無料。しつこい営業は一切行いません。</p>
+    <div class="cta-boxes fi">
+      <a href="https://www.iegao.co.jp/contact/" class="cta-box">
+        <svg class="cta-box-picto" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        </svg>
+        <div class="cta-box-ttl">無料相談・資料請求</div>
+        <div class="cta-box-desc">ご要望をお聞きして、最適なプランと収支計画をご提案。オンライン相談も対応中。</div>
+        <span class="cta-box-arr">お問い合わせはこちら →</span>
+      </a>
+      <a href="https://www.iegao.co.jp/contact/" class="cta-box">
+        <svg class="cta-box-picto" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+        <div class="cta-box-ttl">収支シミュレーション依頼</div>
+        <div class="cta-box-desc">お持ちの土地・ご希望エリアをお知らせいただければ、詳細な収支計画をご提出します。</div>
+        <span class="cta-box-arr">シミュレーション依頼 →</span>
+      </a>
+    </div>
+    <p class="cta-note fi">
+      お電話でのご相談：<a href="tel:0368050802" class="cta-tel">03-6805-0802</a>　
+      東京都渋谷区渋谷2-11-5 クロスオフィス渋谷メディオ 6-C
+    </p>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div>
+      <svg width="136" height="40" viewBox="0 0 136 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 22 L27 16 L33 22 L33 30 L21 30 Z" fill="#F26A00"/>
+        <rect x="25" y="24" width="4" height="6" fill="#111"/>
+        <path d="M27 11 L37 21 L35 21 L27 14 L19 21 L17 21 Z" fill="#F26A00"/>
+        <text x="42" y="27" font-family="Montserrat,sans-serif" font-size="20" font-weight="800" fill="white" letter-spacing="1">IEGAO</text>
+        <rect x="42" y="32" width="88" height="2.5" rx="1.25" fill="#F26A00"/>
+      </svg>
+      <p class="footer-brand-desc">「いい家×いい笑顔」を信念に、すべての方に理想のマイホームを。<br>賃貸併用住宅の設計・建築から管理・資産運用まで一貫サポート。</p>
+      <div class="footer-tel-wrap">
+        <div class="footer-tel-lbl">お電話でのご相談</div>
+        <div class="footer-tel-num">03-6805-0802</div>
+        <div class="footer-tel-addr">東京都渋谷区渋谷2-11-5 クロスオフィス渋谷メディオ 6-C</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-ttl">Service</div>
+      <ul class="footer-links">
+        <li><a href="#">賃貸併用住宅</a></li>
+        <li><a href="#">注文住宅</a></li>
+        <li><a href="#">土地活用（賃貸住宅）</a></li>
+        <li><a href="#">リフォーム</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-ttl">Company</div>
+      <ul class="footer-links">
+        <li><a href="https://www.iegao.co.jp/about/">私たちについて</a></li>
+        <li><a href="https://www.iegao.co.jp/about/#message">代表メッセージ</a></li>
+        <li><a href="https://www.iegao.co.jp/company/">会社概要</a></li>
+        <li><a href="https://www.iegao.co.jp/recruit/">採用情報</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-ttl">Support</div>
+      <ul class="footer-links">
+        <li><a href="#">収支シミュレーション</a></li>
+        <li><a href="#">よくある質問</a></li>
+        <li><a href="https://www.iegao.co.jp/topic/">トピックス</a></li>
+        <li><a href="https://www.iegao.co.jp/contact/">お問い合わせ</a></li>
+        <li><a href="https://www.iegao.co.jp/privacy/">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© IEGAO Co., Ltd. All Rights Reserved.</span>
+    <div class="footer-btm-links">
+      <a href="https://www.iegao.co.jp/privacy/">プライバシーポリシー</a>
+      <a href="https://www.iegao.co.jp/company/">会社概要</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FLOATING ══ -->
+<div class="floating">
+  <a href="tel:0368050802" class="float-btn dark">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F26A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.06 6.06l1.27-.34a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    03-6805-0802
+  </a>
+  <a href="#contact" class="float-btn">
+    <div class="live-dot"></div>
+    無料相談する
+  </a>
+</div>
+
+<script>
+function switchSim(e, p) {
+  document.querySelectorAll('.sim-tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.sim-panel').forEach(x => x.classList.remove('on'));
+  e.target.classList.add('on');
+  document.getElementById('sp-' + p).classList.add('on');
+}
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
